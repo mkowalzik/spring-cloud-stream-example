@@ -1,0 +1,13 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: itemUpdater
+  cloud:
+    stream:
+      bindings:
+        updateItemTopic:
+          destination: updateItemTopic
+        changedItemTopic:
+          group: ${spring.application.name}
+          destination: changedItemTopic

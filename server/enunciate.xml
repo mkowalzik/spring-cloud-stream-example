@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enunciate
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://enunciate.webcohesion.com/schemas/enunciate-2.9.0.xsd">
+
+    <api-classes>
+        <include pattern="biz.kowalzik.**"/>
+    </api-classes>
+
+    <modules>
+        <enunciate-jaxb disabled="true" />
+        <enunciate-jackson disabled="true" />
+        <enunciate-jackson1 disabled="true" />
+        <enunciate-jaxws disabled="true" />
+        <enunciate-jaxrs disabled="true" />
+
+
+        <gwt-json-overlay disabled="true"/>
+        <enunciate-java-xml-client disabled="true"/>
+        <enunciate-csharp-xml-client disabled="true"/>
+        <enunciate-java-json-client disabled="true"/>
+        <enunciate-javascript-client disabled="true"/>
+        <enunciate-obj-c-xml-client disabled="true"/>
+        <enunciate-php-xml-client disabled="true"/>
+        <enunciate-php-json-client disabled="true"/>
+        <enunciate-ruby-json-client disabled="true"/>
+        <enunciate-idl disabled="true"/>
+        
+        
+    </modules>
+
+
+</enunciate>

@@ -1,0 +1,16 @@
+server:
+  port: 0
+spring:
+  application:
+    name: itemServer
+  cloud:
+    consul:
+      discovery:
+        instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    stream:
+      bindings:
+        updateItemTopic:
+          group: ${spring.application.name}
+          destination: updateItemTopic
+        changedItemTopic:
+          destination: changedItemTopic
