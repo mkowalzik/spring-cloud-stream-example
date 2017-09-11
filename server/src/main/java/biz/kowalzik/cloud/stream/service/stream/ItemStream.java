@@ -31,8 +31,9 @@ public class ItemStream {
 
     @StreamListener(Topics.UPDATE)
     public void createItem(ItemMessage itemMessage) {
-        LOGGER.info("Received Message with ItemUpdate");
-        this.persistenceService.persist(itemMapper.mapToModel(itemMessage));
+        throw new NullPointerException();
+//        LOGGER.info("Received Message with ItemUpdate");
+//        this.persistenceService.persist(itemMapper.mapToModel(itemMessage));
     }
 
     public void itemChanged(InternalItem newValue) {

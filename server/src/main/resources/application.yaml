@@ -12,5 +12,17 @@ spring:
         updateItemTopic:
           group: ${spring.application.name}
           destination: updateItemTopic
+          consumer:
+            concurrency: 10
+            maxAttempts: 1
         changedItemTopic:
           destination: changedItemTopic
+      rabbit:
+        bindings:
+          updateItemTopic:
+            consumer:
+              autoBindDlq: true
+              republishToDlq: true
+              requeueRejected: true
+              dlqTtl: 5000
+              dlqDeadLetterExchange:
