@@ -18,7 +18,6 @@ public class DLQRetryConfiguration {
     private static final String DLQ = IN_QUEUE + ".dlq";
     private static final String PARKING_LOT = IN_QUEUE + ".parkingLot";
     private static final String X_RETRIES_HEADER = "x-retries";
-    private static final String DLQ_EXCHANGE = Topics.UPDATE + "DLX";
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
@@ -38,19 +37,9 @@ public class DLQRetryConfiguration {
         }
     }
 
-//    @Bean
-//    public DirectExchange dlqExchange() {
-//        return new DirectExchange(DLQ_EXCHANGE);
-//    }
-
     @Bean
     public Queue parkingLot() {
         return QueueBuilder.durable(PARKING_LOT).build();
     }
-
-//    @Bean
-//    Queue deadLetterQueue() {
-//        return QueueBuilder.durable(DLQ).build();
-//    }
 
 }
